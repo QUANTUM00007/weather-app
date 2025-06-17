@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🌤️ Weather App</h1>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if weather.temperature %}
+    <div class="weather-card">
+        <h2>{{ weather.city }}</h2>
+        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather Icon">
+        <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+        <p><strong>Description:</strong> {{ weather.description }}</p>
+    </div>
+    {% elif weather.error %}
+    <p style="color: red;">{{ weather.error }}</p>
+    {% endif %}
+</body>
+</html>
