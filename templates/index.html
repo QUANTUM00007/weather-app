@@ -6,22 +6,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>🌤️ Weather App</h1>
+    <div class="container">
+        <h1>🌤️ Weather App</h1>
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Get Weather</button>
+        </form>
 
-    <form method="POST">
-        <input type="text" name="city" placeholder="Enter city name" required>
-        <button type="submit">Search</button>
-    </form>
-
-    {% if weather.temperature %}
-    <div class="weather-card">
-        <h2>{{ weather.city }}</h2>
-        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather Icon">
-        <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
-        <p><strong>Description:</strong> {{ weather.description }}</p>
+        {% if weather %}
+            {% if weather.error %}
+                <p class="error">{{ weather.error }}</p>
+            {% else %}
+                <div class="weather-info">
+                    <h2>{{ weather.city }}</h2>
+                    <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+                    <p><strong>Temperature:</strong> {{ weather.temperature }} °C</p>
+                    <p><strong>Description:</strong> {{ weather.description }}</p>
+                </div>
+            {% endif %}
+        {% endif %}
     </div>
-    {% elif weather.error %}
-    <p style="color: red;">{{ weather.error }}</p>
-    {% endif %}
+
+    <footer>
+        <p>© 2025 All rights reserved. Designed & Developed by Mohd Arslan.</p>
+    </footer>
 </body>
 </html>

@@ -1,51 +1,69 @@
-/* General styling */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #83a4d4, #b6fbff);
-    color: #333;
-    text-align: center;
-    padding: 2rem;
     margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    min-height: 100vh;
+    padding-bottom: 60px; /* space for footer */
 }
 
-/* Form styling */
-form {
-    margin: 2rem 0;
+.container {
+    max-width: 500px;
+    margin: 80px auto 20px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
 }
 
-input[type="text"] {
-    padding: 0.6rem;
-    width: 250px;
-    border: none;
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
-button {
-    padding: 0.6rem 1rem;
-    background-color: #0077ff;
+form button {
+    padding: 10px 15px;
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
-    margin-left: 10px;
-    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    margin-left: 10px;
 }
 
-button:hover {
-    background-color: #005fcc;
+form button:hover {
+    background-color: #2980b9;
 }
 
-/* Weather card */
-.weather-card {
-    background: white;
-    padding: 2rem;
-    margin: 2rem auto;
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.weather-info {
+    margin-top: 20px;
+    color: #333;
 }
 
-img {
-    width: 80px;
+.error {
+    color: red;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 0.7rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
